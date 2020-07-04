@@ -120,12 +120,11 @@ const SignIn: React.FC = () => {
               />
 
               <Button
+                icon="arrow-right"
                 onPress={() => {
                   formRef.current?.submitForm();
                 }}
-              >
-                Seguir
-              </Button>
+              />
             </Form>
 
             <ForgotPassword
