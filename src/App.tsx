@@ -8,6 +8,8 @@ import AppProvider from './hooks';
 
 import Routes from './routes';
 
+import Store from './pages/Store'
+
 const App: React.FC = () => (
   <NavigationContainer>
     <StatusBar barStyle="light-content" backgroundColor="#F71963" translucent />

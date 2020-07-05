@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <Container style={containerStyle} {...rest}>
-      {icon && <Icon name={icon} size={30} color="#EEEEEE" />}
+      {icon && <Icon name={icon} size={24} color="#EEEEEE" />}
       {children && <ButtonText>{children}</ButtonText>}
     </Container>
   );
