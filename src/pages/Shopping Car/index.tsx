@@ -25,16 +25,19 @@ import jare from '../../assets/jare.jpg'
 
 import {
   Container,
-  SearchBar,
-  SearchBarInput,
+  StoreName,
+
   Footer,
+  FooterCircle,
   FooterText,
   Icon,
-  SearchIcon,
+  ChevronIcon,
+
+  ProductsList,
   Product,
-  ProductImage,
   ProductName,
-  ProductPrice
+  CloseButton
+  
 } from './styles';
 
 interface SignInFormData {
@@ -42,7 +45,7 @@ interface SignInFormData {
   password: string;
 }
 
-const Products: React.FC = () => {
+const ShoppingCar: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
@@ -60,43 +63,60 @@ const Products: React.FC = () => {
           contentContainerStyle={{ flex: 1 }}
         >
           <Container>
-            <SearchBar>
-              <SearchIcon name="search" size={20} color="#000"/>
-              <SearchBarInput/>
-            </SearchBar>
-            
-              <Product>
-                <ProductImage source={jare}></ProductImage>
-                <ProductName>Nome do produto</ProductName>
-                <ProductPrice>$150,00</ProductPrice>
-              </Product>
+            <StoreName>
+              Loja do Marcelin
+              <ChevronIcon name="chevron-down" size={20}/>
+            </StoreName>
+            <StoreName>
+              Loja do Thiagão
+              <ChevronIcon name="chevron-down" size={20}/>  
+            </StoreName>
+
+            <StoreName>
+              Varejo da mosca varejeira
+              <ChevronIcon name="chevron-up" size={20}/>
+            </StoreName>
+            <ProductsList>
 
               <Product>
-                <ProductImage source={jare}></ProductImage>
-                <ProductName>Nome do produto</ProductName>
-                <ProductPrice>$150,00</ProductPrice>
+                <ProductName>Coleira pra jacaré</ProductName>
+                <CloseButton><Icon name="x"/></CloseButton>
+              </Product>
+              <Product>
+                <ProductName>Coleira pra jacaré</ProductName>
+                <CloseButton><Icon name="x"/></CloseButton>
+              </Product>
+              <Product>
+                <ProductName>Coleira pra jacaré</ProductName>
+                <CloseButton><Icon name="x"/></CloseButton>
+              </Product>
+              <Product>
+                <ProductName>Coleira pra jacaré</ProductName>
+                <CloseButton><Icon name="x"/></CloseButton>
+              </Product>
+              <Product>
+                <ProductName>Coleira pra jacaré</ProductName>
+                <CloseButton><Icon name="x"/></CloseButton>
               </Product>
               
-              <Product>
-                <ProductImage source={jare}></ProductImage>
-                <ProductName>Nome do produto</ProductName>
-                <ProductPrice>$150,00</ProductPrice>
-              </Product>
+              <Button>Finalizar compra</Button>
 
-              <Product>
-                <ProductImage source={jare}></ProductImage>
-                <ProductName>Nome do produto</ProductName>
-                <ProductPrice>$150,00</ProductPrice>
-              </Product>
-            
+            </ProductsList>
 
+
+            <StoreName>
+              Atacadão do atacado
+              <ChevronIcon name="chevron-down" size={20}/>  
+            </StoreName>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
 
       <Footer>
           <Icon onPress={()=> {console.log('ok')}} name="map" size={20}/>
-          <Icon name="shopping-cart" size={20}/>
+          <FooterCircle>
+            <Icon name="shopping-cart" size={32}/>
+          </FooterCircle>
           <Icon name="user" size={20}/>
           <Icon name="home" size={20}/>
       </Footer>
@@ -104,4 +124,4 @@ const Products: React.FC = () => {
   );
 };
 
-export default Products;
+export default ShoppingCar;

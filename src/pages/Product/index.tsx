@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState, useEffect } from 'react';
 import {
   View,
   ScrollView,
@@ -6,6 +6,7 @@ import {
   Platform,
   TextInput,
   Alert,
+  Text
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import * as Yup from 'yup';
@@ -24,26 +25,32 @@ import jare from '../../assets/jare.jpg'
 
 import {
   Container,
-  Addres,
-  Description,
   Image,
   Info,
   Title,
+
+  PriceAndAddToCartContainer,
+  Price,
+  AddToCartContainer,
+
+  CartCount,
+  Count,
+  CountButton,
+  CountText,
+  CartIcon,
+
+  Description,
   Footer,
-  FooterText,
   Icon
 } from './styles';
 
-interface SignInFormData {
-  email: string;
-  password: string;
-}
-
-const Stores: React.FC = () => {
+const Product: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
 
   const navigation = useNavigation();
+
+  const [counter, setCounter] = useState(0)
 
   return (
     <>
@@ -55,17 +62,39 @@ const Stores: React.FC = () => {
 
             <Info>
               <Image source={jare} />
-                <Title>Nome da loja</Title>
-                <Addres>Rua tal 0000, bairro. Cidade -UF </Addres>
+                <Title>Coleira pra jacaré</Title>
+
+                <PriceAndAddToCartContainer>
+                  <Price>R$ 150,00</Price>
+                  <AddToCartContainer>
+                    <CartCount>
+
+                      <CountButton 
+                        activeOpacity={0.8}
+                      > 
+                        <CountText> - </CountText> 
+                      </CountButton>
+                      <Count> 
+                        <CountText> {counter} </CountText> 
+                      </Count>
+                      <CountButton 
+                        activeOpacity={0.8}
+                      > 
+                        <CountText> + </CountText> 
+                      </CountButton>
+
+                    </CartCount>
+                    <CartIcon name="shopping-cart" size={20}/>
+                  </AddToCartContainer>
+                </PriceAndAddToCartContainer>
+
                 <Description>
                     Descrição: Lorem Ipsum blablabla. Lorem Ipsum blablabla Lorem Ipsum bla Lorem Ipsum blabla.
                     Lorem Ipsum blablabla Lorem Ipsum blabla Lorem Ipsum bla. Lorem Ipsum blabla Lorem Ipsum bla bla... ler mais
                 </Description>
-
-                <Button>Produtos</Button>
                 
             </Info>
-            
+
           </Container>
         </ScrollView>
 
@@ -79,4 +108,4 @@ const Stores: React.FC = () => {
   );
 };
 
-export default Stores;
+export default Product;
