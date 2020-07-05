@@ -34,11 +34,13 @@
     "react-native-gesture-handler": "^1.6.1",
     "react-native-image-picker": "^2.3.1",
     "react-native-iphone-x-helper": "^1.2.1",
+    "react-native-maps": "0.27.1",
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.7.0",
     "react-native-testing-library": "^2.1.0",
     "react-native-vector-icons": "^6.6.0",
+    "react-native-webview": "^10.3.2",
     "styled-components": "^5.1.0",
     "yup": "^0.28.5"
   },
